@@ -1,6 +1,19 @@
 # Compiled class file
 *.class
 
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+/.apt_generated/
+/.classpath
+/.factorypath
+/.project
+/.settings/
+/.springBeans
+/target/
+
 # Log file
 *.log
 
