@@ -1,0 +1,35 @@
+server:
+  # 设置项目启动的端口号
+  port: 8090
+  # 设置项目的访问路径（上下文路径）
+  servlet:
+    context-path: /spring-boot-api
+
+## 数据源配置
+spring:
+  datasource:
+    type: com.mchange.v2.c3p0.ComboPooledDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+
+## mybatis 配置
+mybatis:
+  # 映射文件的存放路径
+  mapper-locations: classpath:/mappers/*.xml
+  type-aliases-package: org.example.po
+  configuration:
+    ## 下划线转驼峰配置
+    map-underscore-to-camel-case: true
+
+## 分页插件
+pagehelper:
+  helper-dialect: mysql
+
+## 显示 dao 执行 sql 语句
+logging:
+  level:
+    org:
+      example:
+        dao: debug
