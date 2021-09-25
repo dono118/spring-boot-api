@@ -20,4 +20,13 @@ public class UserService {
     public User queryUserByName(String username) {
         return userMapper.queryUserByName(username);
     }
+
+    /**
+     * 根据用户id查询用户信息
+     * @param id 用户id
+     * @return 返回用户对象
+     */
+    public User queryUserById(Integer id) {
+        return userMapper.queryUserById(id);
+    }
 }

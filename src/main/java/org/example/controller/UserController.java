@@ -19,8 +19,18 @@ public class UserController {
      * @param username 用户名
      * @return 返回用户对象
      */
-    @GetMapping("user/{username}")
+    @GetMapping("user/name/{username}")
     public User queryUserByName(@PathVariable String username) {
         return userService.queryUserByName(username);
+    }
+
+    /**
+     * 根据用户id查询用户信息
+     * @param id 用户id
+     * @return 返回用户对象
+     */
+    @GetMapping("user/{id}")
+    public User queryUserById(@PathVariable Integer id) {
+        return userService.queryUserById(id);
     }
 }

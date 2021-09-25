@@ -7,4 +7,10 @@
         FROM t_user
         WHERE username = #{username}
     </select>
+
+    <select id="queryUserById" parameterType="int" resultType="org.example.po.User">
+        SELECT *
+        FROM t_user
+        WHERE id = #{id}
+    </select>
 </mapper>
