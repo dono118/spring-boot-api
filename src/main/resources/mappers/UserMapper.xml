@@ -13,4 +13,11 @@
         FROM t_user
         WHERE id = #{id}
     </select>
+
+    <insert id="addUser">
+        INSERT INTO
+            t_user(username, password)
+        VALUES
+            (#{username}, #{password})
+    </insert>
 </mapper>

@@ -9,4 +9,7 @@ public interface UserMapper {
 
     // 根据用户id查询用户信息
     public User queryUserById(Integer id);
+
+    // 添加用户
+    public int addUser(User user);
 }
