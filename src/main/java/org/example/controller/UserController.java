@@ -61,4 +61,29 @@ public class UserController {
         }
         return map;
     }
+
+    /**
+     * 修改用户
+     *
+     * @param user
+     * @return
+     */
+    @PutMapping("user")
+    public Map<String, Object> updateUser(@RequestBody User user) {
+        Map<String, Object> map = new HashMap<>();
+        try {
+            userService.addUser(user);
+            map.put("code", "0000");
+            map.put("msg", "修改用户成功！");
+        } catch (ParamsException p) {
+            map.put("code", p.getCode());
+            map.put("msg", p.getMsg());
+            p.printStackTrace();
+        } catch (Exception e) {
+            map.put("code", "2001");
+            map.put("msg", "修改用户失败！");
+            e.printStackTrace();
+        }
+        return map;
+    }
 }

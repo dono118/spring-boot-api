@@ -15,9 +15,15 @@
     </select>
 
     <insert id="addUser">
-        INSERT INTO
-            t_user(username, password)
-        VALUES
-            (#{username}, #{password})
+        INSERT INTO t_user(username, password)
+        VALUES (#{username}, #{password})
     </insert>
+
+    <update id="updateUser">
+        update
+            t_user
+        set username = #{username},
+            password = #{password}
+        where id = #{id}
+    </update>
 </mapper>
