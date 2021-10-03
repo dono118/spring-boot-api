@@ -72,7 +72,7 @@ public class UserController {
     public Map<String, Object> updateUser(@RequestBody User user) {
         Map<String, Object> map = new HashMap<>();
         try {
-            userService.addUser(user);
+            userService.updateUser(user);
             map.put("code", "0000");
             map.put("msg", "修改用户成功！");
         } catch (ParamsException p) {
