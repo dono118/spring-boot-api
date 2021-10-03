@@ -38,7 +38,6 @@ public class UserService {
      * 添加用户
      *
      * @param user
-     * @return
      */
     public void addUser(User user) {
         // 判断用户名和密码是否为空
@@ -57,7 +56,6 @@ public class UserService {
      * 修改用户
      *
      * @param user
-     * @return
      */
     public void updateUser(User user) {
         // 判断用户Id
@@ -73,5 +71,17 @@ public class UserService {
 
         // 执行添加操作，判断受影响的行数
         AssertUtil.isTrue(userMapper.updateUser(user) < 1, "修改用户失败！");
+    }
+
+    /**
+     * 根据用户id删除用户
+     *
+     * @param id
+     */
+    public void deleteUserById(Integer id) {
+        // 判断用户是否存在
+        AssertUtil.isTrue(id == null || userMapper.queryUserById(id) == null, "该用户不存在！");
+
+        AssertUtil.isTrue(userMapper.deleteUserById(id) < 1, "修改用户失败！");
     }
 }

@@ -15,4 +15,7 @@ public interface UserMapper {
 
     // 修改用户
     public int updateUser(User user);
+
+    // 根据用户id删除用户
+    public int deleteUserById(Integer id);
 }

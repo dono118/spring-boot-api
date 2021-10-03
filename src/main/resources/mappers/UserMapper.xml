@@ -26,4 +26,10 @@
             password = #{password}
         where id = #{id}
     </update>
+
+    <delete id="deleteUserById">
+        delete
+        from t_user
+        where id = #{id}
+    </delete>
 </mapper>

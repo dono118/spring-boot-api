@@ -86,4 +86,29 @@ public class UserController {
         }
         return map;
     }
+
+    /**
+     * 删除用户
+     *
+     * @param id
+     * @return
+     */
+    @DeleteMapping("user/{id}")
+    public Map<String, Object> deleteUser(@PathVariable Integer id) {
+        Map<String, Object> map = new HashMap<>();
+        try {
+            userService.deleteUserById(id);
+            map.put("code", "0000");
+            map.put("msg", "删除用户成功！");
+        } catch (ParamsException p) {
+            map.put("code", p.getCode());
+            map.put("msg", p.getMsg());
+            p.printStackTrace();
+        } catch (Exception e) {
+            map.put("code", "2001");
+            map.put("msg", "删除用户失败！");
+            e.printStackTrace();
+        }
+        return map;
+    }
 }
